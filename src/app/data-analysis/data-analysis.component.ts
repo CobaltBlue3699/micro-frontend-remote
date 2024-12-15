@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'data-analysis',
-  standalone: false,
+  standalone: true,
+  imports: [SharedModule],
   template: `
-    data-analysis remote works!
+    remote data-analysis works!
     <router-outlet></router-outlet>
   `,
-  styles: ``
+  styles: ``,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DataAnalysisComponent {
 

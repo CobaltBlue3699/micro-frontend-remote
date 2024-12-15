@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { SharedModule } from '../../shared/shared.module';
 
 @Component({
+  standalone: true,
+  imports: [SharedModule],
   selector: 'data-analysis-dashboard',
   template: `
-    <p>
-    data-analysis dashboard works!
-    </p>
+    <p>remote data-analysis dashboard works!</p>
   `,
   styles: ``
 })

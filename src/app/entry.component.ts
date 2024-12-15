@@ -1,5 +1,6 @@
 import {
   Component,
+  CUSTOM_ELEMENTS_SCHEMA,
   EventEmitter,
   Input,
   OnChanges,
@@ -10,14 +11,19 @@ import {
 import { Router, RoutesRecognized } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-
+import { SharedModule } from './shared/shared.module';
+import { DataAnalysisComponent } from './data-analysis/data-analysis.component';
 export interface RouterEvent {
   url: string;
   replaceUrl: boolean;
 }
 
 @Component({
+  selector: 'data-analysis-entry',
+  standalone: true,
+  imports: [SharedModule, DataAnalysisComponent],
   template: '<data-analysis></data-analysis>',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class EntryComponent implements OnChanges, OnDestroy {
   @Input() route?: string;
